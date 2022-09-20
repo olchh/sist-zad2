@@ -13,7 +13,7 @@ class AnimalThread extends Thread {
         for(int i = 0; i <= 1000; i += 100){
             System.out.println( name + " пробежал(а): " + i + " метров");
             if(i == 500) {
-                prioritet = MIN_PRIORITY;
+                prioritet = NORM_PRIORITY;
                 theard.setPriority(prioritet); //замена приоритета
             }
         }
@@ -21,9 +21,9 @@ class AnimalThread extends Thread {
 }
 public class RabbitAndTurtle{
     public static void main(String args[]){
-        AnimalThread rabbit = new AnimalThread("Кролик",Thread.NORM_PRIORITY);
+        AnimalThread rabbit = new AnimalThread("Кролик",Thread.MIN_PRIORITY);
         rabbit.start();
-        AnimalThread turtle = new AnimalThread("Черепаха",Thread.NORM_PRIORITY);
+        AnimalThread turtle = new AnimalThread("Черепаха",Thread.MAX_PRIORITY);
         turtle.start();
     }
 }
